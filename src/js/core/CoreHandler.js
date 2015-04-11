@@ -6,22 +6,36 @@ var JSDP = JSDP || {};
 
 JSDP.Core = {
     SachinCounters: [],
-    NewSachin: function(){
-        var identifier = Object.keys(JSDP.Core.SachinCounters).length;
-        var sachin_image = $('<br><img src = "./media/images/128483.1.jpg"><br>');
-        sachin_image.attr('data-sachin-image', identifier);
-        var sachin_label = $('<label class = "label"></label><br>');
-        sachin_label.attr('data-sachin-label', identifier);
-        var sachin_name = $('<label class = "label"></label>');
-        sachin_name.html('Sachin Tendulkar ' + identifier);
-        JSDP.Core.SachinCounters[identifier] = {};
-        JSDP.Core.SachinCounters[identifier]['clicks'] = 0;
-        sachin_image.click(function(){
-            var id = $(this).data('sachin-image');
-            JSDP.Core.SachinCounters[id]['clicks']++;
-            var label = '[data-sachin-label = ' + id + ']';
-            $(label).html('The Centuries scored by him today are ' + JSDP.Core.SachinCounters[id]['clicks']);
+    AddNewSachinCache: function(url, name){
+        JSDP.Core.SachinCounters[name.replace(/ /g, '')] = {};
+        JSDP.Core.SachinCounters[name.replace(/ /g, '')]['clicks'] = 0;
+        JSDP.Core.SachinCounters[name.replace(/ /g, '')][url] = url;
+        var li, image, name_label, clicks_label;
+        li = $('<li><a href = "#" class = "btn ui-icon-link"></a></li>');
+        $(li).find('a').html(name);
+        $(li).find('a').attr('data-sachin-name', name.replace(/ /g, ''));
+        $(li).find('a').click(function(){
+            $('.display-area').find('img').addClass('hide');
+            $('.display-area').find('label').not('.displayarea-sl').addClass('hide');
+            var selector = 'img[data-sachin-name = ' + name.replace(/ /g, '') + ']';
+            $(selector).removeClass('hide');
+            selector = 'label[data-sachin-name = ' + name.replace(/ /g, '') + ']';
+            $(selector).removeClass('hide');
         });
-        $('[data-sachin-images]').append(sachin_name).append(sachin_image).append(sachin_label);
+        name_label = $('<label class = "label hide"></label>');
+        name_label.html("Name ---  " + name);
+        name_label.attr('data-sachin-name', name.replace(/ /g, ''));
+        clicks_label = $('<label class = "label hide"></label>');
+        clicks_label.attr('data-sachin-name', name.replace(/ /g, ''));
+        image = $('<img class = "hide">');
+        image.attr('src', url);
+        image.attr('data-sachin-name', name.replace(/ /g, ''));
+        image.click(function(){
+            var id = $(this).attr('data-sachin-name');
+            JSDP.Core.SachinCounters[id]['clicks']++;
+            $(this).next('label').html('The Centirues made by him today are  ' + JSDP.Core.SachinCounters[id]['clicks']);
+        });
+        $('[data-sachin-list]').append(li);
+        $('.display-area').append(name_label, image, clicks_label);
     }
 };

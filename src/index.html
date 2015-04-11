@@ -7,17 +7,26 @@
     <link href="./css/core/core.css" rel = "stylesheet">
 </head>
 <body>
-    <div class = "row">
-        <div class = col-xs-2></div>
-        <div class = "col-xs-8" data-sachin-images>
+    <div class = "row mainview">
+        <div class = 'col-xs-4 list-area'>
+            <ul data-sachin-list>
+
+            </ul>
         </div>
-        <div class="col-xs-2"></div>
+        <div class = 'col-xs-8 display-area'>
+            <label class = 'label displayarea-sl'>Area to Display the Stuff</label>
+        </div>
     </div>
     <script src = "./js/libs/jquery-2.1.3.min.js"></script>
     <script src = "./js/core/CoreHandler.js"></script>
     <script type="text/javascript">
-        JSDP.Core.NewSachin();
-        JSDP.Core.NewSachin();
+        $(document).ready(function(){
+            JSDP.Core.AddNewSachinCache('./media/images/sachin-small/1938165.jpg', 'SRT');
+            JSDP.Core.AddNewSachinCache('./media/images/sachin-small/231494-sachintendulkar.jpg', 'Sachin Ramesh Tendulkar');
+            JSDP.Core.AddNewSachinCache('./media/images/sachin-small/anigif_enhanced-buzz-28053-1381426017-24.gif', 'Little Master');
+            JSDP.Core.AddNewSachinCache('./media/images/sachin-small/thumbnail_220x220 (1).jpg', 'GOD Of Cricket');
+            JSDP.Core.AddNewSachinCache('./media/images/sachin-small/Sachin+Tendulkar+2011+ICC+World+Cup+India+SflUsK0vp7al.jpg', 'Master Blaster');
+        });
     </script>
 </body>
 </html>

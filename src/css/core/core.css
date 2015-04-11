@@ -1,11 +1,45 @@
 html{
-    height: 900px;
-    width: 1200px;
-    background: url("../../media/images/sachin-tendulkar-75v.jpg") center top no-repeat;
+    height: 100%;
+    max-height: 700px;
+    width: 100%;
+    background: url("../../media/images/HD/sachintendulkar1920x1080wallpaper5166.jpg") no-repeat center center;
+    background-size: cover;
 }
 
 body {
     height: 100%;
     width: 100%;
     background-color: rgba(192,192,192,0.2);
+}
+
+.displayarea-sl{
+    margin-left: 20%;
+}
+
+.mainview {
+    height: 90%;
+    width:90%;
+    margin-left:5%;
+}
+
+.list-area {
+    height: 100%;
+    background: rgba(152,102,192,0.4);
+}
+
+.display-area {
+    height: 100%;
+    background: rgba(102,152,192,0.4);
+}
+
+.display-area img{
+    display: block;
+    width: 350px;
+    height: 390px;
+    margin-left: 35%;
+}
+
+.display-area label{
+    display: block;
+    margin-left: 35%;
 }
