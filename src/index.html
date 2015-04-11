@@ -2,9 +2,27 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Clicker!!</title>
+    <link href="./css/libs/bootstrap.min.css" rel = "stylesheet">
+    <link href="./css/core/core.css" rel = "stylesheet">
 </head>
 <body>
-
+    <div class = "row">
+        <div class = col-xs-4></div>
+        <div class = "col-xs-4">
+            <img src="./media/images/128483.1.jpg" data-sachin-click>
+        </div>
+        <div class="col-xs-4"></div>
+    </div>
+    <div class = "row">
+        <label class = "label col-xs-12" data-sachincount-label>The Clicks are</label>
+    </div>
+    <script src = "./js/libs/jquery-2.1.3.min.js"></script>
+    <script src = "./js/core/CoreHandler.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-sachin-click]').click(JSDP.Core.SachinClick);
+        });
+    </script>
 </body>
 </html>

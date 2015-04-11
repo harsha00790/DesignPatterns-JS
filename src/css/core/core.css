@@ -1,0 +1,11 @@
+html{
+    height: 900px;
+    width: 1200px;
+    background: url("../../media/images/sachin-tendulkar-75v.jpg") center top no-repeat;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(192,192,192,0.2);
+}
